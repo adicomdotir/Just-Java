@@ -15,6 +15,13 @@ public class Main {
 		numberCollection.stream().map((x) -> x *2).forEach(System.out::println);
 		printLine();
 		numberCollection.stream().map((x) -> x *2).sorted().forEach(System.out::println);
+		printLine();
+		boolean anyMatch1336 = numberCollection.stream().anyMatch((x) -> x == 1336);
+		System.out.println(anyMatch1336);      // true
+		boolean allMatch1336 = numberCollection.stream().allMatch((x) -> x == 1336);
+		System.out.println(allMatch1336);      // false
+		boolean noneMatch1336 = numberCollection.stream().noneMatch((x) -> x == 1336);
+		System.out.println(noneMatch1336);      // false
 	}
 
 	public static void printLine() {
