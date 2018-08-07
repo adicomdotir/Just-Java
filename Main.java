@@ -11,7 +11,13 @@ public class Main {
 		numberCollection.add(1285);
 
 		numberCollection.stream().filter((x) -> x > 1300).forEach(System.out::println);
-
+		printLine();
 		numberCollection.stream().map((x) -> x *2).forEach(System.out::println);
+		printLine();
+		numberCollection.stream().map((x) -> x *2).sorted().forEach(System.out::println);
+	}
+
+	public static void printLine() {
+		System.out.println("-----------------------");
 	}
 }
