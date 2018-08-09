@@ -22,6 +22,9 @@ public class Main {
 		System.out.println(allMatch1336);      // false
 		boolean noneMatch1336 = numberCollection.stream().noneMatch((x) -> x == 1336);
 		System.out.println(noneMatch1336);      // false
+		printLine();
+		long lowerThan1300 = numberCollection.stream().filter((s) -> s < 1300).count();
+		System.out.println(lowerThan1300);    // 2
 	}
 
 	public static void printLine() {
