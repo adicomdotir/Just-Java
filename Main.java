@@ -25,6 +25,9 @@ public class Main {
 		printLine();
 		long lowerThan1300 = numberCollection.stream().filter((s) -> s < 1300).count();
 		System.out.println(lowerThan1300);    // 2
+		printLine();
+		Optional<Integer> reduced = numberCollection.stream().sorted().reduce((x, y) -> x + y);
+		reduced.ifPresent(System.out::println);
 	}
 
 	public static void printLine() {
