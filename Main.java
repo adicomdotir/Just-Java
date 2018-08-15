@@ -1,3 +1,4 @@
+import io.reactivex.*;
 import java.util.*;
 
 public class Main {
@@ -28,6 +29,8 @@ public class Main {
 		printLine();
 		Optional<Integer> reduced = numberCollection.stream().sorted().reduce((x, y) -> x + y);
 		reduced.ifPresent(System.out::println);
+		printLine();
+		Flowable.just("Hello world").subscribe(System.out::println);
 	}
 
 	public static void printLine() {
