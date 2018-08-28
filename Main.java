@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.function.*;
+import java.text.MessageFormat;
 
 public class Main {
 	public static void main(String[] args) {
@@ -49,9 +50,19 @@ public class Main {
 		Predicate<Boolean> isNull = Objects::isNull;
 		Predicate<String> isEmpty = String::isEmpty;
 		Predicate<String> isNotEmpty = isEmpty.negate();
+
+		printLine();
+
+		printMessageFormat();
 	}
 
 	public static void printLine() {
 		System.out.println("-----------------------");
+	}
+
+	public static void printMessageFormat() {
+		MessageFormat mf = new MessageFormat("String: {0}\nInteger: {1}\nDouble: {2}");
+        Object[] objArray = {"This is a string", new Integer(56), new Double(12.34)};
+        System.out.println(mf.format(objArray));
 	}
 }
