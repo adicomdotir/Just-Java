@@ -59,6 +59,11 @@ public class Main {
 
 		Function<String, String> func = (name) -> { return "Hello " + name; };
 		System.out.println(func.apply("Messi"));
+
+		printLine();
+
+		Supplier<Integer> intSupplier = Integer::new;
+		System.out.println(intSupplier.get());
 	}
 
 	public static void printLine() {
