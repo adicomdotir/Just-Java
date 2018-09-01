@@ -57,13 +57,12 @@ public class Main {
 
 		printLine();
 
-		Function<String, String> func = (name) -> { return "Hello " + name; };
+		// Function<String, String> func = (name) -> { return "Hello " + name; };
+		Function<String, String> func = Main::myMethodRef;
 		System.out.println(func.apply("Messi"));
 
 		printLine();
 
-		Supplier<Integer> intSupplier = Integer::new;
-		System.out.println(intSupplier.get());
 	}
 
 	public static void printLine() {
@@ -74,5 +73,9 @@ public class Main {
 		MessageFormat mf = new MessageFormat("String: {0}\nInteger: {1}\nDouble: {2}");
         Object[] objArray = {"This is a string", new Integer(56), new Double(12.34)};
         System.out.println(mf.format(objArray));
+	}
+
+	public static String myMethodRef(String name) { 
+		return "Hello " + name;
 	}
 }
