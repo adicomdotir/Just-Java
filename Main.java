@@ -54,6 +54,11 @@ public class Main {
 		printLine();
 
 		printMessageFormat();
+
+		printLine();
+
+		Function<String, String> func = (name) -> { return "Hello " + name; };
+		System.out.println(func.apply("Messi"));
 	}
 
 	public static void printLine() {
