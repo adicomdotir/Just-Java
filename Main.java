@@ -63,8 +63,14 @@ public class Main {
 
 		printLine();
 
-		Function<Rectangle, String> funcArea = (rect) -> { return rect.getArea(); };
+		// Function<Rectangle, String> funcArea = (rect) -> { return rect.getArea(); };
+		Function<Rectangle, String> funcArea =  Rectangle::getArea;
 		System.out.println(funcArea.apply(new Rectangle(5, 4)));
+
+		printLine();
+
+		Supplier<Rectangle> rectangleSupplier = Rectangle::new;
+		System.out.println(rectangleSupplier.get().getArea());
 	}
 
 	public static void printLine() {
@@ -84,6 +90,10 @@ public class Main {
 
 class Rectangle {
 	private int x, y;
+
+	public Rectangle() {
+		this(2, 2);
+	}
 
 	public Rectangle(int x, int y) {
 		this.x = x;
