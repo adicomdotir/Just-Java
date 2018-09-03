@@ -63,6 +63,8 @@ public class Main {
 
 		printLine();
 
+		Function<Rectangle, String> funcArea = (rect) -> { return rect.getArea(); };
+		System.out.println(funcArea.apply(new Rectangle(5, 4)));
 	}
 
 	public static void printLine() {
@@ -77,5 +79,18 @@ public class Main {
 
 	public static String myMethodRef(String name) { 
 		return "Hello " + name;
+	}
+}
+
+class Rectangle {
+	private int x, y;
+
+	public Rectangle(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public String getArea() {
+		return "Area is = " + ((x + y) * 2);
 	}
 }
