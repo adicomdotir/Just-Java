@@ -147,3 +147,21 @@ class MelliBank implements Bank {
 		System.out.println("" + price);
 	}
 }
+
+class SepahBank implements Bank {
+	@Override
+	public void saveRial(int price) {
+		System.out.println("" + price);
+	}
+}
+
+class Gold {
+	public int count;
+}
+
+class GoldAdepter implements Bank {
+	@Override
+	public void saveRial(int price) {
+		
+	}
+}
