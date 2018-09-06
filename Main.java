@@ -136,3 +136,14 @@ class Singleton {
 		return mSingleton;
 	}
 }
+
+interface Bank {
+	void saveRial(int price);
+}
+
+class MelliBank implements Bank {
+	@Override
+	public void saveRial(int price) {
+		System.out.println("" + price);
+	}
+}
