@@ -121,3 +121,18 @@ class Rectangle {
 		return "Area is = " + ((x + y) * 2);
 	}
 }
+
+
+class Singleton {
+	private static Singleton mSingleton = null;
+
+	private Singleton() {}
+
+	public static Singleton getInstacne() {
+		if (mSingleton) {
+			mSingleton = new Singleton();
+		}
+
+		return mSingleton;
+	}
+}
