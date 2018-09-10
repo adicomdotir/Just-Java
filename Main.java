@@ -72,6 +72,11 @@ public class Main {
 		Supplier<Rectangle> rectangleSupplier = Rectangle::new;
 		// Supplier<Rectangle> rectangleSupplier = () -> {return new Rectangle(5, 6);};
 		System.out.println(rectangleSupplier.get().getArea());
+
+		printLine();
+
+		Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
+		greeter.accept(new Person("Ali", "Ghorbani"));
 	}
 
 	public static void printLine() {
