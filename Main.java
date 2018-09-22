@@ -57,34 +57,45 @@ public class Main {
 
 		printLine();
 
+		// Functions
 		// Function<String, String> func = (name) -> { return "Hello " + name; };
 		Function<String, String> func = Main::myMethodRef;
 		System.out.println(func.apply("Messi"));
-
 		printLine();
-
 		// Function<Rectangle, String> funcArea = (rect) -> { return rect.getArea(); };
 		Function<Rectangle, String> funcArea =  Rectangle::getArea;
 		System.out.println(funcArea.apply(new Rectangle(5, 4)));
 
 		printLine();
 
+		// Suppliers
 		Supplier<Rectangle> rectangleSupplier = Rectangle::new;
 		// Supplier<Rectangle> rectangleSupplier = () -> {return new Rectangle(5, 6);};
 		System.out.println(rectangleSupplier.get().getArea());
 
 		printLine();
 
-		Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
-		greeter.accept(new Person("Ali", "Ghorbani"));
+		// Consumers
+		// Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
+		// greeter.accept(new Person("Ali", "Ghorbani"));
 
 		printLine();
 
-		Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
-		Person p1 = new Person("John", "Doe");
-		Person p2 = new Person("Alice", "Wonderland");
-		comparator.compare(p1, p2);             // > 0
-		comparator.reversed().compare(p1, p2);  // < 0
+		// Comparators
+		// Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
+		// Person p1 = new Person("John", "Doe");
+		// Person p2 = new Person("Alice", "Wonderland");
+		// comparator.compare(p1, p2);             // > 0
+		// comparator.reversed().compare(p1, p2);  // < 0
+
+		printLine();
+
+		// Optionals
+		Optional<String> optional = Optional.of("adicom");
+		optional.isPresent(); // null or other
+		optional.get();
+		optional.orElse("fallback");
+		optional.ifPresent((s) -> System.out.println(s.charAt(0)));
 	}
 
 	public static void printLine() {
@@ -142,7 +153,7 @@ class Singleton {
 	private Singleton() {}
 
 	public static Singleton getInstacne() {
-		if (mSingleton) {
+		if (mSingleton == null) {
 			mSingleton = new Singleton();
 		}
 
