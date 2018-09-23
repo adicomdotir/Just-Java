@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.function.*;
+import java.util.stream.*;
 import java.text.MessageFormat;
 
 public class Main {
@@ -96,6 +97,14 @@ public class Main {
 		optional.get();
 		optional.orElse("fallback");
 		optional.ifPresent((s) -> System.out.println(s.charAt(0)));
+
+		printLine();
+
+		Stream<String> stream = Stream.of("apple", "tomato", "potato", "orange", "kiwi");
+		stream.filter(s -> s.contains("a"))
+			.map(s -> s.toUpperCase()) // .map(String::toUpperCase())
+			.sorted()
+			.forEach(s -> System.out.println(s)); // .forEach(System.out::println)
 	}
 
 	public static void printLine() {
