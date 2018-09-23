@@ -76,17 +76,17 @@ public class Main {
 		printLine();
 
 		// Consumers
-		// Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
-		// greeter.accept(new Person("Ali", "Ghorbani"));
+		Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
+		greeter.accept(new Person("Ali", "Ghorbani"));
 
 		printLine();
 
 		// Comparators
-		// Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
-		// Person p1 = new Person("John", "Doe");
-		// Person p2 = new Person("Alice", "Wonderland");
-		// comparator.compare(p1, p2);             // > 0
-		// comparator.reversed().compare(p1, p2);  // < 0
+		Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
+		Person p1 = new Person("John", "Doe");
+		Person p2 = new Person("Alice", "Wonderland");
+		comparator.compare(p1, p2);             // > 0
+		comparator.reversed().compare(p1, p2);  // < 0
 
 		printLine();
 
@@ -187,5 +187,23 @@ class GoldAdepter implements Bank {
 	@Override
 	public void saveRial(int price) {
 		
+	}
+}
+
+class Person {
+	public String firstName;
+	public String lastName;
+
+	public Person(String fn, String ln) {
+		this.firstName = fn;
+		this.lastName = ln;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
 	}
 }
