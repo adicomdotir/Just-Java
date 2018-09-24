@@ -120,6 +120,10 @@ public class Main {
 	public static String myMethodRef(String name) { 
 		return "Hello " + name;
 	}
+
+	public static void primeNumberWithStream() {
+		IntStream.range(1, 99).filter(x -> x % 2 == 0).forEach(System.out::println);
+	}
 }
 
 class Rectangle {
