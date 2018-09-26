@@ -111,6 +111,15 @@ public class Main {
 
 		IntStream naturalNumbers = IntStream.iterate(1, x -> x + 1);
 		naturalNumbers.limit(5).forEach(System.out::println);
+
+		printLine();
+
+		Print<String> pr1 = new Print<>();
+		pr1.print("Hello Generic");
+		Print<Integer> pr2 = new Print<>();
+		pr2.print(150);
+		Print<Float> pr3 = new Print<>();
+		pr3.print(1.5F);
 	}
 
 	public static void printLine() {
@@ -224,5 +233,11 @@ class Person {
 
 	public String getLastName() {
 		return lastName;
+	}
+}
+
+class Print<T> {
+	public void print(T t) {
+		System.out.println("" + t);
 	}
 }
