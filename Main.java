@@ -105,6 +105,12 @@ public class Main {
 			.map(s -> s.toUpperCase()) // .map(String::toUpperCase())
 			.sorted()
 			.forEach(s -> System.out.println(s)); // .forEach(System.out::println)
+
+
+		printLine();
+
+		IntStream naturalNumbers = IntStream.iterate(1, x -> x + 1);
+		naturalNumbers.limit(5).forEach(System.out::println);
 	}
 
 	public static void printLine() {
