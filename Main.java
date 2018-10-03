@@ -38,6 +38,28 @@ import java.text.MessageFormat;
  *
  */
 public class Main {
+
+
+	/**
+	 * Fields can be documented as well.
+	 *
+	 * As with other javadocs, the documentation before the first period is used as a
+	 * summary, and is usually separated from the rest of the documentation by a blank
+	 * line.
+	 *
+	 * Documentation for fields can use inline tags, such as:
+	 * {@code code here}
+	 * {@literal text here}
+	 * {@link other.docs.Here}
+	 *
+	 * Field documentation can also make use of the following tags:
+	 *
+	 * @since 2.1.0
+	 * @see some.other.class.Documentation
+	 * @deprecated Describe why this field is outdated
+	 */
+	public int sampleField = 1;
+
 	/**
 	 * Brief summary of method, ending with a period.
 	 *
@@ -71,6 +93,7 @@ public class Main {
 	 * @deprecated Describe why this method is outdated. A replacement can also be specified.
 	 */
 	public static void main(String[] args) {
+
 		List<Integer> numberCollection = new ArrayList<>();
 		numberCollection.add(1320);
 		numberCollection.add(1310);
