@@ -124,6 +124,8 @@ public class Main {
 		pr2.print(150);
 		Print<Float> pr3 = new Print<>();
 		pr3.print(1.5F);
+		Print<Person> pr4 = new Print<>();
+		pr3.print(new Person("Yashar", "Panahi"));
 	}
 
 	public static void printLine() {
