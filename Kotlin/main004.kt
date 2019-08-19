@@ -45,24 +45,3 @@ class OuterOther {
 interface Human {
    fun think()
 }
-
-/*
-
-Anonymous inner class is a pretty good concept that makes the life of a programmer very easy. 
-Whenever we are implementing an interface, the concept of anonymous inner block comes into picture. 
-The concept of creating an object of interface using runtime object reference is known as anonymous class. 
-In the following example, we will create an interface and we will create an object of that interface using Anonymous Inner class mechanism.
-
-Live Demo
-fun main(args: Array<String>) {
-   
-}
-The above piece of code will yield the following output in the browser.
-
-I am an example of Anonymous Inner Class 
-Type Aliases
-Type aliases are a property of Kotlin compiler. It provides the flexibility of creating a new name of an existing type, it does not create a new type. If the type name is too long, you can easily introduce a shorter name and use the same for future usage. Type aliases is really helpful for complex type. In the latest version, Kotlin revoked the support for type aliases, however, if you are using an old version of Kotlin you may have use it like the following −
-
-typealias NodeSet = Set<Network.Node>
-typealias FileTable<K> = MutableMap<K, MutableList<File>>
-*/
