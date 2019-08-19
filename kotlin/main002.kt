@@ -19,6 +19,7 @@ fun main(args: Array<String>) {
     println("Min Long: $minLong, Max Long: $maxLong")
 
     // Characters, Boolean, Strings
+
     val letter: Char = 'A'
     println("$letter")
 
@@ -27,4 +28,18 @@ fun main(args: Array<String>) {
 
     var rawString :String  = "I am Raw String!"
     println("Hello!" + rawString)
+
+    // Array, Collection, Ranges
+
+    val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
+    println("I'm second element of array : " + numbers[1])
+
+    val numbers: MutableList<Int> = mutableListOf(1, 2, 3) // mutable List 
+    val readOnlyView: List<Int> = numbers // immutable list 
+    println("my mutable list: " + numbers)
+    println(readOnlyView)     
+
+    if (i in 1..10) {
+        println("we found your number: " + i)
+    }
 }
