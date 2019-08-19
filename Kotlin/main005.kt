@@ -10,6 +10,6 @@ fun main(args: Array<String>) {
 class Person(val firstName: String, var age: Int) {}
 
 class Human(val firstName: String, var age: Int) {
-    val message:String  = "Hey!!!"
+    val message: String  = "Hey!!!"
     constructor(name: String, age: Int, message: String): this(name, age) {}
 }
