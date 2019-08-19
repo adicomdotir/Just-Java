@@ -1,14 +1,23 @@
 fun main(args: Array<String>) {
-    // Simple Class
-    val simpleClass = MyClass()
-    simpleClass.printMe()
+   // Simple Class
+   val simpleClass = MyClass()
+   simpleClass.printMe()
 
-    // Nested Class
-    val demo = Outer.Nested().foo()
-    print(demo)
+   // Nested Class
+   val demo = Outer.Nested().foo()
+   print(demo)
 
-    // Inner Class
+   // Inner Class
+   val demo2 = OuterOther().NestedInner().foo()
+   println(demo2)
 
+   // Anonymous Inner Class
+   var programmer :Human = object:Human {
+      override fun think() { 
+         print("I am an example of Anonymous Inner Class ")
+      }
+   }
+   programmer.think()
 }
 
 class MyClass {
@@ -28,26 +37,25 @@ class Outer {
 }
 
 class OuterOther {
-    inner class NestedInner {
-        fun foo() = "OK"
-    }
+   inner class NestedInner {
+      fun foo() = "OK"
+   }
+}
+
+interface Human {
+   fun think()
 }
 
 /*
-Anonymous Inner Class
-Anonymous inner class is a pretty good concept that makes the life of a programmer very easy. Whenever we are implementing an interface, the concept of anonymous inner block comes into picture. The concept of creating an object of interface using runtime object reference is known as anonymous class. In the following example, we will create an interface and we will create an object of that interface using Anonymous Inner class mechanism.
+
+Anonymous inner class is a pretty good concept that makes the life of a programmer very easy. 
+Whenever we are implementing an interface, the concept of anonymous inner block comes into picture. 
+The concept of creating an object of interface using runtime object reference is known as anonymous class. 
+In the following example, we will create an interface and we will create an object of that interface using Anonymous Inner class mechanism.
 
 Live Demo
 fun main(args: Array<String>) {
-   var programmer :Human = object:Human // creating an instance of the interface {
-      override fun think() { // overriding the think method
-         print("I am an example of Anonymous Inner Class ")
-      }
-   }
-   programmer.think()
-}
-interface Human {
-   fun think()
+   
 }
 The above piece of code will yield the following output in the browser.
 
