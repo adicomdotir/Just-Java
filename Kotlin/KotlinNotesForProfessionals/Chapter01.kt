@@ -30,4 +30,14 @@ fun arraySample() {
     // getOrNull, first, last, toHashSet,
     // sortedArray, sort, min, max
 
+    val sec = Array(5, { i -> (i * i).toString() })
+    for(s in sec) {
+        println(s)
+    }
+    /*
+    for(s: String in sec) {
+        println(s)
+    }
+    */
+
 }
