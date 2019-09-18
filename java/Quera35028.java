@@ -17,19 +17,20 @@ public class Quera35028 {
              s = t;
              t = temp;
          }
-         boolean has = false;
-         for (int i = s - 1; i < t - 1; i++) {
-             if (charArray[i] == 'H' && has == false) {
+         
+         for (int i = s - 1; i <= t - 1; i++) {
+             if (charArray[i] == 'H') {
                  count++;
-                 has = true;
              } else if (charArray[i] == 'P') {
-                 if (count % 2 == 0) max += 1;
-                 else max += 2;
+                 max += oneInBits(count);
                  count = 0;
-                 has = false;
              }
          }
          System.out.println(max + "");
          
+     }
+     
+     public static int oneInBits(int n) {
+         return Integer.bitCount(n);
      }
 }
