@@ -6,7 +6,10 @@ fun main(args: Array<String>) {
     val list = listOf<User>(user1, user2, user3, user4)
 
     val allowedAge = { user: User -> user.age > 18 }
-    print(list.filter(allowedAge))
+    println(list.filter(allowedAge))
+
+    val upperCase: (String) -> String = { it.toUpperCase() }
+    println(upperCase("hello"))
 }
 
 data class User(val age: Int)
