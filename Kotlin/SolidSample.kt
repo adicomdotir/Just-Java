@@ -1,5 +1,6 @@
 fun main() {
     val emp = Employee()
+	val num: Int = 5
     emp.run()
     val other: Other = Other(emp)
 }
@@ -35,5 +36,16 @@ class Student : Person, Runner {
 class Other {
     constructor(p: Person) {
         p.print()
+    }
+}
+
+/*
+Single responsibility principle
+    A class should have one, and only one, reason to change.
+*/
+
+class Robot(val name: String, val type: String) {
+    fun greet() {
+        println("Hello my name is $name, and I am a $type robot")
     }
 }
