@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.math.BigInteger; 
 
 public class MyClass {
     public static void main(String[] args) {
@@ -17,9 +18,9 @@ public class MyClass {
 
     public static int findIndex(int number) {
         int index = 1;
-        int fib1 = 0, fib2 = 1;
-        while (fib2 % number != 0) {
-            int temp = fib1 + fib2;
+        BigInteger fib1 = BigInteger.valueOf(0), fib2 = BigInteger.valueOf(1);
+        while (fib2.remainder(BigInteger.valueOf(number)) != BigInteger.valueOf(0)) {
+            BigInteger temp = fib1.add(fib2);
             fib1 = fib2;
             fib2 = temp;
             index++;
