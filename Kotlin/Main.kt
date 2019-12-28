@@ -1,15 +1,17 @@
 fun main() {
-    println("Hello, world!!!")
-    val w: Workable = Worker(87)
-    w.work()
-}
-
-interface Workable {
-    fun work();
-}
-
-class Worker(val age: Int): Workable {
-    override fun work() {
-        println(age)
-    }
+    println("All For Condition")
+    val myArray = arrayOf(10, 5, 55, 1, 33)
+    for (item in myArray) print("$item ")
+    println()
+    for (i in 5..10) print("$i ")
+    println()
+    for (i in 5..10 step 2) print("$i ")
+    println()
+    for (i in 5 downTo 1) print("$i ")
+    println()
+    for (i in 5 downTo 1 step 2) print("$i ")
+    println()
+    for (i in myArray.indices) print("${myArray[i]} ")
+    println()
+    for ((index, value) in myArray.withIndex()) print("[$index]->$value ")
 }
