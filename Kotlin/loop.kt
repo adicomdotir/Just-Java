@@ -6,10 +6,20 @@ fun main(args: Array<String>) {
     continueExample()
 }
 
+fun max(a: Int, b: Int): Int = if (a > b) {
+                        println("$a is greater")
+                        a
+                    } else {
+                        println("$b is greater")
+                        b
+                    }
+
 fun breakExample() {
+    println()
+    println("breakExample()")
     myLoop@ for (i in 1..3) {
         for (j in 1..3) {
-            println("$i  $j")
+            print("$i-$j ")
             if (i == 2 && j == 2) {
                 break@myLoop
             }
@@ -22,12 +32,14 @@ fun breakExample() {
 }
     
 fun continueExample() {
+    println()
+    println("continueExample()")
     myLoop@ for (i in 1..3) {
         for (j in 1..3) {
             if (i == 2 && j == 2) {
                 continue@myLoop
             }
-            println("$i  $j")
+            print("$i-$j ")
         }
     }
     /*  OUTPUT
@@ -38,19 +50,20 @@ fun continueExample() {
 }
 
 fun whileDoWhileExample(arr: Array<Int>): Unit {
+    println()
     println("while()")
     var index = 0;
     while(index < arr.size) {
         print(" ${arr[index]}")
         index++
     }
-
+    println()
     println("do {} while()")
-    var index = 0;
+    index = 0;
     do {
         print(" ${arr[index]}")
         index++
-    } while (index <= arr.size)
+    } while (index < arr.size)
 }
 
 fun forExample(arr: Array<Int>): Unit {
