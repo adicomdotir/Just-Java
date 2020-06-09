@@ -2,12 +2,19 @@
 #include <string>
 using namespace std;
 
+void println(string);
+
 class Person {
-    public:     
+
+public:     
     Person(string name, int age) {
-        std::cout << "Constructor" << endl;
+        cout << "Constructor" << endl;
         this->name = name;
         this->age = age;
+    }
+
+    ~Person() {
+        println("Destructors");
     }
     
     string toString() {
@@ -30,17 +37,36 @@ class Person {
         return this->age;
     }
 
-    private:
-    std::string name;
+private:
+    string name;
     int age;
 };
 
-int main() {
-    Person p = Person("Ali", 33);
+class Student : Person {
+public: 
+    Student(string name, int age, float grade) : Person(name, age) {
+        println("Child Constructor");
+    }
 
-    Person *ptr = new Person("Haassan", 18);
-    ptr->setName("Hassan");
-    
-    cout << p.toString() << endl << ptr->toString();
-    delete ptr;
+    void setGrade(float grade) {
+        this->grade = grade;
+    }
+
+    float getGrade() {
+        return this->grade;
+    }
+
+    string toString() {
+        return Person::toString();
+    }
+private: 
+    float grade;
+};
+
+int main() {
+    Student *st = new Student("Ali", 16, 15);
+}
+
+void println(string message) {
+    cout << message << endl;
 }
