@@ -12,26 +12,31 @@ fun main(args: Array<String>) {
     // Use of When
     val x: Int = 5
     when (x) {
-       1 -> print("x = = 1")
-       2 -> print("x = = 2")
-       3,4 -> print("x is 3 or 4")
+       1 -> println("x == 1")
+       2 -> println("x == 2")
+       3,4 -> println("x is 3 or 4")
        else -> { // Note the block
-          print("x is neither 1 nor 2")
+          println("x is neither 1 nor 2")
        }
     }
 
     // For Loop
     val items = listOf(1, 2, 3, 4)
-    for (i in items) println("values of the array " + i)
+    for (i in items) {
+        println("values of the array " + i)
+    } 
     for ((index, value) in items.withIndex()) {
         println("the element at $index is $value")
     }
+    for (index in items.indices) {
+        println("the element at $index")
+    }
 
     // While Loop and Do-While Loop
-    var x:Int = 0
+    var z:Int = 0
     println("Example of While Loop")
-    while(x <= 10) {
-        println(x)
-        x++
+    while(z <= 10) {
+        println(z)
+        z++
     } 
 }

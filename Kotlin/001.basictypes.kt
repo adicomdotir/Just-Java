@@ -39,7 +39,7 @@ fun main(args: Array<String>) {
     println("my mutable list: " + numbers)
     println(readOnlyView)     
 
-    if (i in 1..10) {
+    for (i in 1..10) {
         println("we found your number: " + i)
     }
 }
