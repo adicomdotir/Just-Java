@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class MyClass {
+public class Quera19996problems66521 {
     List<Player> players = new ArrayList<>();
     List<Team> teams = new ArrayList<>();
     List<PlayerTeam> playerTeamList = new ArrayList<>();
@@ -9,7 +9,7 @@ public class MyClass {
     public static void main(String args[]) {
 
         Scanner sc = new Scanner(System.in);
-        MyClass myClass = new MyClass();
+        Quera19996problems66521 myClass = new Quera19996problems66521();
 
         while(sc.hasNext()) {
             String cmd = sc.nextLine();
@@ -94,7 +94,7 @@ public class MyClass {
                 countPlayerB++;
                 if (countPlayerB <= 11) {
                     Player pl = players.stream().filter(x -> x.id == pt.playerId).findFirst().get();
-                    powerB += pl.speed + pl.finishing;
+                    powerB += pl.speed + pl.defence;
                 }
             }
         }
@@ -200,6 +200,9 @@ public class MyClass {
             System.out.println("team doesnt have this player");
             return;
         }
+
+         Player pl  = players.stream().filter(x -> x.id == Integer.parseInt(arrOfStr[1])).findFirst().get();
+        team.money += pl.price;
 
         playerTeamList.remove(index);
         System.out.println("player sold succesfully");
